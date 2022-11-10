@@ -32,4 +32,34 @@ public class CategorieProduit implements Serializable {
 	@OneToMany(mappedBy = "categorieProduit")
 	@JsonIgnore
 	private Set<Produit> produits;
+	
+	public CategorieProduit(String codeCategorie, String libelleCategorie) {
+		super();
+		this.codeCategorie = codeCategorie;
+		this.libelleCategorie = libelleCategorie;
+		
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public String getCodeCategorie() {
+		return codeCategorie;
+	}
+
+	public void setCodeCategorie(String codeCategorie) {
+		this.codeCategorie = codeCategorie;
+	}
+
+	public String getLibelleCategorie() {
+		return libelleCategorie;
+	}
+
+	public void setLibelleCategorie(String libelleCategorie) {
+		this.libelleCategorie = libelleCategorie;
+	}
+	
+	
+	
 }

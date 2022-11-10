@@ -24,9 +24,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Produit implements Serializable {
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,6 +45,75 @@ public class Produit implements Serializable {
 	@ManyToOne
 	@JsonIgnore
 	private CategorieProduit categorieProduit;
+	
+	
+	
+	
+	
+	public Produit(String libelleProduit, float prix) {
+		super();
+		this.libelleProduit = libelleProduit;
+		this.prix = prix;
+	}
+	
+	
+	public Long getIdProduit() {
+		return idProduit;
+	}
+	public void setIdProduit(Long idProduit) {
+		this.idProduit = idProduit;
+	}
+	public String getCodeProduit() {
+		return codeProduit;
+	}
+	public void setCodeProduit(String codeProduit) {
+		this.codeProduit = codeProduit;
+	}
+	public String getLibelleProduit() {
+		return libelleProduit;
+	}
+	public void setLibelleProduit(String libelleProduit) {
+		this.libelleProduit = libelleProduit;
+	}
+	public float getPrix() {
+		return prix;
+	}
+	public void setPrix(float prix) {
+		this.prix = prix;
+	}
+	public Date getDateCreation() {
+		return dateCreation;
+	}
+	public void setDateCreation(Date dateCreation) {
+		this.dateCreation = dateCreation;
+	}
+	public Date getDateDerniereModification() {
+		return dateDerniereModification;
+	}
+	public void setDateDerniereModification(Date dateDerniereModification) {
+		this.dateDerniereModification = dateDerniereModification;
+	}
+	public Stock getStock() {
+		return stock;
+	}
+	public void setStock(Stock stock) {
+		this.stock = stock;
+	}
+	public Set<DetailFacture> getDetailFacture() {
+		return detailFacture;
+	}
+	public void setDetailFacture(Set<DetailFacture> detailFacture) {
+		this.detailFacture = detailFacture;
+	}
+	public CategorieProduit getCategorieProduit() {
+		return categorieProduit;
+	}
+	public void setCategorieProduit(CategorieProduit categorieProduit) {
+		this.categorieProduit = categorieProduit;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	
 
 
