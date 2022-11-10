@@ -1,0 +1,36 @@
+version: '3'
+services:
+  mysqldb:
+    container_name: wissalbr
+    image: mysql:8
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 0000
+    volumes:
+        - /home/mysql/data:/var/lib/mysql
+  spring_app:
+    image: tpachat
+    container_name: tpachat
+    restart: on-failure
+    ports:
+      - 9090:8089
+    depends_on:
+        - wissalbr
+  sonar:
+    image: sonarqube:8.9.7-community
+    container_name: sonar
+    ports:
+      - 9000:9000
+    volumes:
+        - /home/SonarQube/data:/opt/sonarqube/data
+    restart: on-failure
+
+  nexus:
+    image: sonatype/nexus3:latest
+    container_name: nexus
+    ports:
+      - 8081:8081
+      - 8088:8088
+    volumes:
+        - /home/nexus/data:/nexus-data
+    restart: on-failure
