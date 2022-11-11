@@ -37,9 +37,7 @@ public class Stock implements Serializable {
 		this.qteMin = qteMin;
 	}
 	
-	public Stock() {
-		super();
-	}
+	
 
 	public Long getIdStock() {
 		return idStock;
