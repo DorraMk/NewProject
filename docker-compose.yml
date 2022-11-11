@@ -1,6 +1,6 @@
 version: '3'
 services:
-  mysqldb:
+  dorramk:
     container_name: dorramk
     image: mysql:8
     restart: unless-stopped
