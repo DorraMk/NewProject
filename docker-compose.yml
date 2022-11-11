@@ -1,6 +1,6 @@
 version: '3'
 services:
-  mysqldb:
+  wissalbr:
     container_name: wissalbr
     image: mysql:8
     restart: unless-stopped
