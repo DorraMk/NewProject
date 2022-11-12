@@ -21,7 +21,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
+
 public class Facture implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -52,6 +52,9 @@ public class Facture implements Serializable {
 		this.montantRemise = montantRemise;
 		this.montantFacture = montantFacture;
 		this.archivee = archivee;
+	}
+	public Facture() {
+		// TODO Auto-generated constructor stub
 	}
 	public Long getIdFacture() {
 		return idFacture;

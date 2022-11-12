@@ -17,7 +17,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 public class Stock implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -38,6 +37,12 @@ public class Stock implements Serializable {
 	}
 	
 	
+
+	public Stock() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 
 	public Long getIdStock() {
 		return idStock;

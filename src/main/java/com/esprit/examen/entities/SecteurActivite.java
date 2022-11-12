@@ -17,7 +17,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 public class SecteurActivite implements Serializable{
 	/**
 	 * 
@@ -38,6 +37,9 @@ public class SecteurActivite implements Serializable{
 		super();
 		this.codeSecteurActivite = codeSecteurActivite;
 		this.libelleSecteurActivite = libelleSecteurActivite;
+	}
+	public SecteurActivite() {
+		// TODO Auto-generated constructor stub
 	}
 	public Long getIdSecteurActivite() {
 		return idSecteurActivite;
