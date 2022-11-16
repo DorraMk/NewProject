@@ -8,7 +8,8 @@ environment {
         stage('Git') {
             steps {
                 echo "Getting Project from Git"; 
-		url: "https://github.com/DorraMk/NewProject.git"
+                    url: "https://github.com/DorraMk/NewProject.git",
+		            credentialsId: 'git_cred'
             }
         }
         stage("Build Maven") {
