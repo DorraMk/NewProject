@@ -20,7 +20,7 @@ environment {
         stage("Build Sonar ")
         {
             steps {
-                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=dorra'
+                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=dorra2'
               
             }
         }
