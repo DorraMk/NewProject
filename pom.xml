@@ -15,19 +15,17 @@
 	<description>tpAchatProject</description>
 	<properties>
 		<java.version>1.8</java.version>
-    	<!-- JaCoCo Properties -->
-    	<jacoco.version>0.8.6</jacoco.version>
-    	<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-    	<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-    	<sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
-    	<sonar.language>java</sonar.language>
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+		
+		    <!-- JaCoCo Properties -->
+    <jacoco.version>0.8.6</jacoco.version>
+    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+    <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+    <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+    <sonar.language>java</sonar.language>
 	</properties>
+	
 	<dependencies>
-		<dependency>
-    		<groupId>org.jacoco</groupId> 
-    		<artifactId>jacoco-maven-plugin</artifactId>
-    		<version>0.8.6</version>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -56,11 +54,7 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
+		
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -80,38 +74,62 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
+		
+		
+		
 		<dependency>
-			<groupId>com.h2database</groupId>
+		<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-	</dependencies>
-	<profiles>
-		<profile>
-			<id>dev</id>
-			<properties>
-			<env>src/main/resources/dev</env>
-			<maven.test.skip>true</maven.test.skip>
-			</properties>
-			<activation>
-			<activeByDefault>true</activeByDefault>
-			</activation>
-		</profile>
-		<profile>
-			<id>test</id>
-			<properties>
+		
+		
+		
+		
+		<dependency>
+    <groupId>org.jacoco</groupId> 
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>0.8.6</version>
+</dependency>
+		
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>5.8.2</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>	
+		
+
+ <profiles>
+	<profile>
+	<id>dev</id>
+		<properties>
+				<env>src/main/resources/dev</env>
+				<maven.test.skip>false</maven.test.skip>
+		</properties>
+	<activation>
+		<activeByDefault>true</activeByDefault>
+	</activation>
+	</profile>
+	<profile>
+	<id>test</id>
+		<properties>
 			<env>src/main/resources/test</env>
-			</properties>
-		</profile>
-		<profile>
-			<id>prod</id>
-			<properties>
+		</properties>
+		<activation>
+		<activeByDefault>true</activeByDefault>
+	</activation>
+	</profile>
+	<profile>
+	<id>prod</id>
+		<properties>
 			<env>src/main/resources/prod</env>
 			<maven.test.skip>true</maven.test.skip>
-			</properties>
-		</profile>
-	</profiles>
-	
+		</properties>
+	</profile>
+ </profiles>
+ 
 	<build>
 		<plugins>
 			<plugin>
@@ -123,10 +141,14 @@
 	<artifactId>maven-resources-plugin</artifactId>
 	<version>3.1.0</version>
 </plugin>
+
+
+
+
 <plugin>
     <groupId>org.jacoco</groupId>
     <artifactId>jacoco-maven-plugin</artifactId>
-    <version>${jacoco.version}</version>
+ 
     <executions>
         <execution>
             <id>jacoco-initialize</id>
@@ -143,20 +165,27 @@
         </execution>
     </executions>
 </plugin>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.2</version>
+        </plugin>
+    
 		</plugins>
 		<resources>
-		<resource>
-			<directory>src/main/resources</directory>
-			<excludes>
-			<exclude>dev/**</exclude>
-			<exclude>test/**</exclude>
-			<exclude>prod/**</exclude>
-			</excludes>
-		</resource>
-		<resource>
-			<directory>${env}</directory>
-		</resource>
-		</resources>
+	<resource>
+	<directory>src/main/resources</directory>
+	<excludes>
+	<exclude>dev/**</exclude>
+	<exclude>test/**</exclude>
+	<exclude>prod/**</exclude>
+	</excludes>
+	</resource>
+	<resource>
+	<directory>${env}</directory>
+	</resource>
+	</resources>
 	</build>
 
 </project>
