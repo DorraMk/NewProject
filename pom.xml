@@ -117,6 +117,11 @@
 		<properties>
 			<env>src/main/resources/test</env>
 		</properties>
+	<activation>
+		<property>
+		<name>test</name>
+		</property>
+	</activation>
 	</profile>
 	<profile>
 	<id>prod</id>
