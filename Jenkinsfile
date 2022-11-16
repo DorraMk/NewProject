@@ -7,8 +7,7 @@ environment {
     stages {
         stage('Git') {
             steps {
-                url: 'https://github.com/DorraMk/NewProject.git',
-		            credentialsId: 'git_cred'
+                git branch :'Dorra' ,url: 'https://github.com/DorraMk/NewProject.git'
             }
         }
         stage("Build Maven") {
