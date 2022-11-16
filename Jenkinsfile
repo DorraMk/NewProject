@@ -5,11 +5,7 @@ environment {
         imagename = "projectdevops"}
 
     stages {
-        stage('Git') {
-            steps {
-                git branch :'Dorra' ,url: 'https://github.com/DorraMk/NewProject.git'
-            }
-        }
+      
         stage("Build Maven") {
             steps {
                 sh 'mvn -B -DskipTests clean package'
