@@ -2,7 +2,7 @@ pipeline {
     agent {label 'agent'}
 
 environment {
-        imagename = "projectdevops"}
+        imagename = "projetachat"}
 
     stages {
       
@@ -20,7 +20,7 @@ environment {
         stage("Build Sonar ")
         {
             steps {
-                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=dorra2'
+                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=wiss-1998'
               
             }
         }
