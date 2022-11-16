@@ -29,11 +29,7 @@ environment {
           steps{
             sh'mvn test -Ptest'
         }
-        post {
-            always {
-            junit testResults: '*/target/surefire-reports/.xml', allowEmptyResults: true
-        }
-        }
+     
         }
     }
      
