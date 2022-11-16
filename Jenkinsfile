@@ -27,7 +27,7 @@ environment {
          stage(" SRC Analysis Testing ")
         {
           steps{
-            sh'mvn test'
+            sh'mvn test -Ptest'
         }
         post {
             always {
