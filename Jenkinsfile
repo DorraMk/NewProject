@@ -1,4 +1,4 @@
-{
+pipeline {
     agent {label 'Agent1'}
 
 environment {
