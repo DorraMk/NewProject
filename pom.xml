@@ -117,6 +117,9 @@
 		<properties>
 			<env>src/main/resources/test</env>
 		</properties>
+		<activation>
+		<activeByDefault>true</activeByDefault>
+	</activation>
 	</profile>
 	<profile>
 	<id>prod</id>
