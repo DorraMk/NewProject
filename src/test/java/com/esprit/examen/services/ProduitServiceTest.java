@@ -32,7 +32,7 @@ public class ProduitServiceTest {
 		Produit s = new Produit("prod test",100);
 		Produit savedProduct=produitService.addProduit(s) ;
 		assertNotNull(savedProduct.getIdProduit());
-		assertSame(100, savedProduct.getPrix());
+		assertSame(100.0, savedProduct.getPrix());
 		produitService.deleteProduit(savedProduct.getIdProduit());
 		
 	} 

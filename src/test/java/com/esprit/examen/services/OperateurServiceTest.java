@@ -30,7 +30,7 @@ public class OperateurServiceTest {
 	@Test
 	public void testAddProductOptimized() {
 
-		Operateur s = new Operateur("operateur ","1nom","prenom");
+		Operateur s = new Operateur("operateur","1nom","prenom");
 		Operateur savedOp=operateurService.addOperateur(s) ;
 		assertNotNull(savedOp.getIdOperateur());
 		assertSame("operateur", savedOp.getNom());

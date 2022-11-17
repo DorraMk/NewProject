@@ -28,7 +28,7 @@ public void testAddProduit() {
 @Test
 public void testAddProductOptimized() {
 
-	CategorieProduit s = new CategorieProduit("cat1 ","1test");
+	CategorieProduit s = new CategorieProduit("cat1","1test");
 	CategorieProduit savedCat=categorieService.addCategorieProduit(s) ;
 	assertNotNull(savedCat.getSerialversionuid());
 	assertSame("cat1", savedCat.getCodeCategorie());
