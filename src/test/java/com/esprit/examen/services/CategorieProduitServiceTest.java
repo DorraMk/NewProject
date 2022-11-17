@@ -22,7 +22,7 @@ public void testAddProduit() {
 	CategorieProduit savedCat=categorieService.addCategorieProduit(s) ;
 	assertNotNull(savedCat.getCodeCategorie());
 	assertNotNull(savedCat.getLibelleCategorie());
-	categorieService.deleteCategorieProduit(savedCat.getSerialversionuid());
+	
 }
 
 @Test
@@ -33,7 +33,7 @@ public void testAddProductOptimized() {
 	assertNotNull(savedCat.getSerialversionuid());
 	assertSame("cat1", savedCat.getCodeCategorie());
 	assertSame("1test", savedCat.getLibelleCategorie());
-	categorieService.deleteCategorieProduit(savedCat.getSerialversionuid());
+	
 }
 @Test
 public void testDeleteStock() {
