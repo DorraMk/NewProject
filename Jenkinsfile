@@ -2,7 +2,8 @@ pipeline {
     agent {label 'agent'}
 
 environment {
-        imagename = "projetachat"}
+        imagename = "projetachat"
+        DOCKERHUB_CREDENTIALS=credentials('docker_hub')}
 
     stages {
       
@@ -27,9 +28,22 @@ environment {
         }
          stage("Build Docker image") {
             steps {
-                sh 'docker build -t imagename .'
+                sh 'docker build -t wissalbenrhouma/devops_project:latest .'
             }
         }
+         stage("Login") {
+            steps {
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
+        
+        stage('Push') {
+
+			steps {
+				sh 'docker push wissalbenrhouma/devops_project:latest'
+			}
+		}
+    }    
 	 	stage("Start Containers") {
             steps {
                 sh 'docker-compose up -d'
