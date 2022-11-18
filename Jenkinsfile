@@ -20,13 +20,6 @@ environment {
               
             }
         }
-        stage("Jacoco ")
-        {
-            steps {
-                sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install'
-              
-            }
-        }
         stage("Build Maven") {
             steps {
                 sh 'mvn -B -DskipTests clean package'
