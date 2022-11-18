@@ -33,7 +33,7 @@ environment {
         }
          stage("Login") {
             steps {
-                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS'
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p dckr_pat_Q1wUaN4SmFGi9vCc4gL-gO_OGc8'
             }
         }
         
