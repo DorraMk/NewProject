@@ -42,8 +42,7 @@ environment {
 			steps {
 				sh 'docker push wissalbenrhouma/devops_project:latest'
 			}
-		}
-    }    
+		}  
 	 	stage("Start Containers") {
             steps {
                 sh 'docker-compose up -d'
