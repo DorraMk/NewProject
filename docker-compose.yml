@@ -13,6 +13,6 @@ services:
     container_name: tpachat
     restart: on-failure
     ports:
-      - 9093:8089
+      - 9092:9092
     depends_on:
         - wissalbr
