@@ -21,7 +21,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
+
 public class Produit implements Serializable {
 
 	
@@ -50,6 +50,11 @@ public class Produit implements Serializable {
 	
 	
 	
+	public Produit() {
+		super();
+	}
+
+
 	public Produit(String libelleProduit, float prix) {
 		super();
 		this.libelleProduit = libelleProduit;
